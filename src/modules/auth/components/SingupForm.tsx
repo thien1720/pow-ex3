@@ -28,8 +28,8 @@ const SingupForm = (props: Props) => {
             repeatPassword: '',
             name: '',
             gender: '',
-            region: '',
-            state: '',
+            region: [],
+            state: [],
         }
     });
     const [formValues, setFormValues] = React.useState<ISignUpParams>({
@@ -47,7 +47,7 @@ const SingupForm = (props: Props) => {
     const onSubmit = React.useCallback(() => {
         // setValidate(validate);
         onSignUp(formValues);
-        console.log("thien")
+        // console.log("thien")
     }, [formValues, onSignUp]);
 
     function toastMessage() {
@@ -193,12 +193,12 @@ const SingupForm = (props: Props) => {
                                         setFormValues({ ...formValues, repeatPassword: e.target.value })
 
                                     } else {
-                                        console.log(formValues.password)
+                                        // console.log(formValues.password)
                                         setReatPass("")
                                         setFormValues({ ...formValues, repeatPassword: e.target.value })
 
                                     }
-                                    console.log("skfjdk")
+                                    // console.log("skfjdk")
                                     field.onChange(e);
                                     // setFormValues({ ...formValues, repeatPassword: e.target.value })
                                 }}
@@ -323,7 +323,7 @@ const SingupForm = (props: Props) => {
                             </label>
                             <select
                                 onChange={(e) => {
-                                    console.log("state", e.target.value)
+                                    // console.log("state", e.target.value)
                                     field.onChange(e);
                                     setFormValues({ ...formValues, state: e.target.value })
                                 }}

@@ -71,8 +71,9 @@ const SignUpPage = () => {
 
             if (json?.code === RESPONSE_STATUS_SUCCESS) {
                 dispatch(setUserInfo(json.data));
+                console.log("singup")
                 // Cookies.set(ACCESS_TOKEN_KEY, json.data.token, { expires: values.rememberMe ? 7 : undefined });
-                toastMessage(json.message)
+                await toastMessage(json.message)
 
                 dispatch(replace(ROUTES.home));
                 return;
